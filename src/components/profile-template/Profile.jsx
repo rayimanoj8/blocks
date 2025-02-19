@@ -2,9 +2,9 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/compo
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar.jsx";
 import {Github, Linkedin, Mail, Map, MapPin} from "lucide-react";
 import {Button} from "@/components/ui/button.jsx";
-import EditProfile from "@/components/EditProfile.jsx";
+import EditProfile from "@/components/profile-template/EditProfile.jsx";
 import {useState} from "react";
-import EditPersonalInfo from "@/components/EditPersonalInfo.jsx";
+import EditPersonalInfo from "@/components/profile-template/EditPersonalInfo.jsx";
 
 export default function Profile(){
     const [profile,setProfile] = useState({

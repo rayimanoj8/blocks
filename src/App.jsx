@@ -6,7 +6,7 @@ import {Toggle} from "@/components/ui/toggle.jsx";
 import { Sun,Moon } from 'lucide-react';
 import Navbar from "@/components/NavBar.jsx";
 import Bg from "@/components/Bg.jsx"
-import Profile from "@/components/Profile.jsx";
+import Profile from "@/components/profile-template/Profile.jsx";
 
 
 function App() {
