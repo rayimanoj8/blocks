@@ -7,10 +7,6 @@ import Profile from "@/components/profile-template/Profile.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-        <Routes>
-            <Route path="/blocks" element={<Profile />}/>
-        </Routes>
-    </BrowserRouter>
+    <App/>
   </StrictMode>,
 )
