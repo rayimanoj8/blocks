@@ -10,16 +10,6 @@ import Profile from "@/components/profile-template/Profile.jsx";
 
 
 function App() {
-    const [theme, setTheme] = useState("light");
-    const toggleTheme = () => {
-        if(theme === "light") setTheme("dark");
-        else setTheme("light");
-    }
-
-    useEffect(() => {
-        document.querySelector("html").classList.remove("light","dark");
-        document.querySelector("html").classList.add(theme);
-    }, [theme]);
   return (
     <>
         <Profile/>
