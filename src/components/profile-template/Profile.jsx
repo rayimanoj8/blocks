@@ -17,7 +17,6 @@ export default function Profile(){
         github:"https://github.com/rayimanoj8",
         mail:"rayimanoj8@gmail.com",
     })
-    console.log(profile)
     return (
         <div className="w-[400px] mx-auto space-y-3 my-4">
             <Card className="relative">
