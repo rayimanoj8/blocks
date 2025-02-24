@@ -22,36 +22,40 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import {SidebarFooter} from "./ui/sidebar.jsx";
+import {SidebarFooter, SidebarTrigger, useSidebar} from "./ui/sidebar.jsx";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "./ui/dropdown-menu.jsx";
+import React from "react";
 
 // Menu items.
-const items = [
-    {
-        title: "Expand",
-        url: "#",
-        icon: Menu,
-    },
-    {
-        title: "Messages",
-        url: "#",
-        icon: MessageCircle ,
-    },
-    {
-        title: "Phone",
-        url: "#",
-        icon: Phone,
-    },
-    {
-        title: "Status",
-        url: "#",
-        icon: CircleFadingPlus,
-    },
-]
 
 export function AppSidebar() {
+    const [open,setOpen] = React.useState(false);
+    const items = [
+        {
+            title: "",
+            url: "#",
+            icon: Menu,
+            onClick:()=>{setOpen(!open)}
+        },
+        {
+            title: "Messages",
+            url: "#",
+            icon: MessageCircle ,
+        },
+        {
+            title: "Phone",
+            url: "#",
+            icon: Phone,
+        },
+        {
+            title: "Status",
+            url: "#",
+            icon: CircleFadingPlus,
+        },
+    ]
+    const { toggleSidebar } = useSidebar()
     return (
-        <Sidebar variant="float" collapsible="icon">
+        <Sidebar open={open} onOpenChange={setOpen} variant="float" collapsible="icon">
             <SidebarContent>
                 <SidebarGroup>
                     <SidebarGroupLabel>Navigate</SidebarGroupLabel>
@@ -59,7 +63,9 @@ export function AppSidebar() {
                         <SidebarMenu>
                             {items.map((item) => (
                                 <SidebarMenuItem key={item.title}>
-                                    <SidebarMenuButton asChild>
+                                    <SidebarMenuButton
+                                        onClick={toggleSidebar}
+                                        asChild>
                                         <a href={item.url}>
                                             <item.icon />
                                             <span>{item.title}</span>
@@ -67,6 +73,7 @@ export function AppSidebar() {
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}
+
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
