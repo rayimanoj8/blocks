@@ -21,11 +21,20 @@ import {
 } from "../components/ui/dropdown-menu.jsx";
 import {SidebarInset, SidebarProvider, SidebarTrigger} from "../components/ui/sidebar.jsx";
 import {AppSidebar} from "./app-sidebar.jsx";
+import React from "react";
 
 export const ChatGPT = () => {
     const arr = [
         Image,File,Terminal,GraduationCap,Lightbulb
     ]
+    const [prompt, setPrompt] = React.useState(null);
+    const buttons = [
+        { label: "Create Image", icon: Image },
+        { label: "Summarize Text", icon: File },
+        { label: "Code", icon: Terminal },
+        { label: "Advice", icon: GraduationCap },
+        { label: "Brainstorm", icon: Lightbulb }
+    ];
     return <SidebarProvider>
             <AppSidebar/>
             <div className="mx-auto border h-dvh lg:w-[400px] flex flex-col justify-between">
@@ -66,36 +75,25 @@ export const ChatGPT = () => {
                 <div className="space-y-5">
                     <h1 className="text-center text-xl font-medium">What can i help with?</h1>
                     <div className="flex justify-center flex-wrap gap-2">
-                        <Button
-                            className="rounded-full"
-                            variant="outline">
-                            <Image/> Create image
-                        </Button>
-                        <Button
-                            className="rounded-full"
-                            variant="outline">
-                            <File/> Summarize text
-                        </Button>
-                        <Button
-                            className="rounded-full"
-                            variant="outline">
-                            <Terminal/> Code
-                        </Button>
-                        <Button
-                            className="rounded-full"
-                            variant="outline">
-                            <GraduationCap/> Advice
-                        </Button>
-                        <Button
-                            className="rounded-full"
-                            variant="outline">
-                            <Lightbulb/> Brainstorm
-                        </Button>
+                        {
+                            buttons.map((item,index)=>(
+                                <Button
+                                    key={index}
+                                    className="rounded-full"
+                                    variant="outline"
+                                    onClick={()=>setPrompt(item.label)}
+                                >
+                                    <item.icon/> {item.label}
+                                </Button>
+                            ))
+                        }
                     </div>
                 </div>
                 <div className="pb-2 space-y-2 border rounded-tr-xl rounded-tl-xl">
                     <input
                         placeholder="Message YourGPT"
+                        value={prompt}
+                        onChange={(e)=>setPrompt(e.target.value)}
                         className="flex h-9 w-full rounded-md bg-transparent px-3 py-1 text-base shadow-sm transition-colors outline-none"
                     />
                     <div className="flex gap-1 px-2 ">

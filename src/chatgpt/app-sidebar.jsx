@@ -23,7 +23,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import {SidebarFooter, SidebarHeader} from "../components/ui/sidebar.jsx";
+import {SidebarFooter, SidebarHeader, SidebarTrigger} from "../components/ui/sidebar.jsx";
 import {Input} from "../components/ui/input.jsx";
 import {Button} from "../components/ui/button.jsx";
 import {
@@ -64,24 +64,25 @@ export function AppSidebar() {
         <Sidebar>
             <SidebarHeader>
                 <div className="flex gap-2 items-center">
-                    <Input
-                        placeholder="Search"
-                    />
-                    <Button
-                        variant="ghost"
-                    >
-                        <SquarePen />
-                    </Button>
+                    <div className="relative ">
+                        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5"/>
+                        <Input
+                            placeholder="Search or start new chat"
+                            className="pl-10"
+                            disabled
+                        />
+                    </div>
+                    <SidebarTrigger/>
                 </div>
                 <SidebarGroup>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             <SidebarMenuItem>
                                 <SidebarMenuButton>
-                                    <Brain /> ChatGPT
+                                    <Brain/> ChatGPT
                                 </SidebarMenuButton>
                                 <SidebarMenuButton>
-                                    <LayoutGrid /> Explore GPTs
+                                    <LayoutGrid/> Explore GPTs
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
                         </SidebarMenu>
@@ -93,9 +94,9 @@ export function AppSidebar() {
                     <SidebarGroupLabel>Chats</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
-                            {chatTitles.map((item,index) => (
+                            {chatTitles.map((item, index) => (
                                 <SidebarMenuItem key={index}>
-                                    <SidebarMenuButton asChild>
+                                <SidebarMenuButton asChild>
                                         <a >
                                             <span>{item}</span>
                                         </a>
