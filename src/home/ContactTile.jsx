@@ -1,5 +1,5 @@
-import {Avatar, AvatarFallback, AvatarImage} from "../ui/avatar.jsx";
-import {Card, CardDescription, CardHeader, CardTitle} from "../ui/card.jsx";
+import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar.jsx";
+import {Card, CardDescription, CardHeader, CardTitle} from "@/components/ui/card.jsx";
 
 export const ContactTile = ({name , message, image , setChat})=>{
     return (

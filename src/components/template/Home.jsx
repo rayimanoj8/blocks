@@ -1,6 +1,6 @@
 "use client";
-import {SidebarInset, SidebarProvider, SidebarTrigger} from "../ui/sidebar.jsx";
-import {AppSidebar} from "../app-sidebar.jsx";
+import {SidebarInset, SidebarProvider, SidebarTrigger} from "@/components/ui/sidebar.jsx";
+import {AppSidebar} from "./app-sidebar.jsx";
 import {
     Brush,
     Camera, ChartBarIncreasing,
@@ -14,21 +14,21 @@ import {
     Star, User, UserRound,
     Users, Video
 } from "lucide-react";
-import {Button} from "../ui/button.jsx";
-import {Input} from "../ui/input.jsx";
+import {Button} from "@/components/ui/button.jsx";
+import {Input} from "@/components/ui/input.jsx";
 import {ContactTile} from "./ContactTile.jsx";
-import {ScrollArea} from "../ui/scroll-area.jsx";
+import {ScrollArea} from "@/components/ui/scroll-area.jsx";
 import {
     DropdownMenu,
     DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem,
     DropdownMenuLabel,
-    DropdownMenuSeparator, DropdownMenuShortcut,
+    DropdownMenuSeparator,
     DropdownMenuTrigger
-} from "../ui/dropdown-menu.jsx";
-import {Avatar, AvatarFallback, AvatarImage} from "../ui/avatar.jsx";
-import {CardDescription, CardTitle} from "../ui/card.jsx";
+} from "@/components/ui/dropdown-menu.jsx";
+import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar.jsx";
+import {CardDescription, CardTitle} from "@/components/ui/card.jsx";
 import {useState} from "react";
-import {ResizableHandle, ResizablePanel, ResizablePanelGroup} from "../ui/resizable.jsx";
+import {ResizableHandle, ResizablePanel, ResizablePanelGroup} from "@/components/ui/resizable.jsx";
 
 export const Home = () => {
     const temp = [

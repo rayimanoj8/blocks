@@ -9,13 +9,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export default defineConfig({
-  base: '/blocks',
+  base: '/',
   plugins: [
     react(),
     VitePWA({
       registerType: 'prompt',  // Can also be 'autoUpdate'
       manifest: {
-        name: 'My Vite React PWA',
+        name: 'Manoj\'s',
         short_name: 'VitePWA',
         description: 'A Vite-powered React Progressive Web App',
         theme_color: '#ffffff',

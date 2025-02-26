@@ -1,14 +1,11 @@
+import React from "react";
 import {
-    Calendar, ChevronUp,
+    ChevronUp,
     CircleFadingPlus,
-    Home,
-    Inbox,
     Menu,
     MessageCircle,
     Phone,
-    Search,
     Settings,
-    User,
     User2
 } from "lucide-react"
 
@@ -22,21 +19,14 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import {SidebarFooter, SidebarTrigger, useSidebar} from "./ui/sidebar.jsx";
-import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "./ui/dropdown-menu.jsx";
-import React from "react";
+import {SidebarFooter, useSidebar} from "@/components/ui/sidebar";
+import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu";
 
 // Menu items.
 
 export function AppSidebar() {
     const [open,setOpen] = React.useState(false);
     const items = [
-        {
-            title: "",
-            url: "#",
-            icon: Menu,
-            onClick:()=>{setOpen(!open)}
-        },
         {
             title: "Messages",
             url: "#",
@@ -61,10 +51,20 @@ export function AppSidebar() {
                     <SidebarGroupLabel>Navigate</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
+                            <SidebarMenuItem>
+                                <SidebarMenuButton
+                                    onClick={toggleSidebar}
+                                    asChild>
+                                    <span>
+                                        <Menu/>
+                                    </span>
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
+                        </SidebarMenu>
+                        <SidebarMenu>
                             {items.map((item) => (
                                 <SidebarMenuItem key={item.title}>
                                     <SidebarMenuButton
-                                        onClick={toggleSidebar}
                                         asChild>
                                         <a href={item.url}>
                                             <item.icon />

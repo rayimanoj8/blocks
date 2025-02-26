@@ -1,12 +1,9 @@
-
-import {Home} from "./components/template/Home.jsx";
+import {ChatGPT} from "./chatgpt/ChatGPT.jsx";
 
 
 function App() {
   return (
-    <>
-        <Home/>
-    </>
+      <ChatGPT/>
   );
 }
 
