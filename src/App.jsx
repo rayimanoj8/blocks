@@ -1,9 +1,8 @@
-import {ChatGPT} from "./chatgpt/ChatGPT.jsx";
-
+import {Outlet} from "react-router-dom";
 
 function App() {
   return (
-      <ChatGPT/>
+      <Outlet/>
   );
 }
 
