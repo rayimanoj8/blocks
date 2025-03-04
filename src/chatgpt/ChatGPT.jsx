@@ -37,7 +37,7 @@ export const ChatGPT = () => {
     ];
     return <SidebarProvider>
             <AppSidebar/>
-            <div className="mx-auto border h-dvh lg:w-[400px] flex flex-col justify-between">
+            <div className="mx-auto h-dvh  flex flex-col justify-between">
                 <div id="navbar"
                     className="flex justify-between py-2 px-1"
                 >
@@ -73,7 +73,7 @@ export const ChatGPT = () => {
                 </div>
 
                 <div className="space-y-5">
-                    <h1 className="text-center text-xl font-medium">What can i help with?</h1>
+                    <h1 className="text-center text-xl lg:text-3xl font-medium">What can i help with?</h1>
                     <div className="flex justify-center flex-wrap gap-2">
                         {
                             buttons.map((item,index)=>(
